@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <!-- Add any CSS or Bootstrap for styling -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .user-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef;
+            border-radius: 6px;
+        }
+        .user-info h3 {
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .user-info p {
+            font-size: 16px;
+            color: #555;
+        }
+        .logout {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to your Dashboard, <span th:text="${name}">User</span>!</h2>
+        
+        <!-- User Information Section -->
+        <div class="user-info">
+            <h3>Your Details:</h3>
+            <p><strong>Email:</strong> <span th:text="${email}"></span></p>
+        </div>
+
+        <!-- Logout Option -->
+        <div class="logout">
+            <a th:href="@{/logout}" class="btn">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
